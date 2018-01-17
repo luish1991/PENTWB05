@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PENTWB05</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+
+            });
+
+            function cargar(){
+                $("#formulario").css('display','block');
+                $("#mensaje").css('display','none');
+                $("#btnEnviar").prop('disabled',false);
+            }
+
+            function enviar(){
+                $("#formulario").css('display','none');
+                $("#mensaje").css('display','block');
+                $("#btnEnviar").prop('disabled',true);
+            }
+        </script>
+        <style>
+           #container{
+                 width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+           }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="jumbotron">
+                <h1 class="display-4">Spring Framework</h1>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Proyectos</h3><br />
+                    <div class="texto">
+                        Vea los proyectos que conforma Spring.
+                    </div>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalProyectos">Ver</button>
+
+                </div>
+                <div class="col-md-4">
+                    <h3>Cursos</h3><br />
+                    <div class="texto">
+                        Vea cursos de Spring.
+                    </div>
+                    <button class="btn btn-primary" onclick="window.location.href='pagina2.html'">Ver</button>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contacto</h3><br />
+                    <div class="texto">
+                        Ponerse en contacto
+                    </div>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalContacto" onclick="cargar()">Contacto</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal contacto -->
+        <div class="modal fade" id="modalContacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="text-align: center">
+                <h4 class="modal-title" id="exampleModalLabel">Contacto</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                    <div id="formulario">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input type="email" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Asunto</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Comentario</label>
+                                <textarea class="form-control" rows="7" cols="20"></textarea>
+                            </div>
+                        </div>
+                    <div id="mensaje" style="display:none">
+                        <div class="alert alert-success" role="alert">Se ha enviado</div>
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" id="btnEnviar" class="btn btn-success" onclick="enviar()">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal proyectos -->
+        <div class="modal fade" id="modalProyectos" tabindex="-1" role="dialog"  aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="text-align: center">
+                <h4 class="modal-title">Proyectos</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                   <div class="list-group">
+                       <a href="https://projects.spring.io/spring-framework" class="list-group-item list-group-item-action">Spring Core</a>
+                       <a href="https://projects.spring.io/spring-data" class="list-group-item list-group-item-action">Spring Data</a>
+                       <a href="https://projects.spring.io/spring-batch" class="list-group-item list-group-item-action">Spring Batch</a>
+                       <a href="https://projects.spring.io/spring-boot" class="list-group-item list-group-item-action">Spring Boot</a>
+                       <a href="https://projects.spring.io/spring-security" class="list-group-item list-group-item-action">Spring Security</a>
+                       <a href="https://projects.spring.io/spring-integration" class="list-group-item list-group-item-action">Spring Integration</a>
+                   </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>
